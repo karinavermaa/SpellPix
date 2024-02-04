@@ -1,0 +1,21 @@
+{
+    "testId": "125caa24-47bd-4313-8c27-d02e05bae13a",
+    "name": "SpellPix",
+    "version": "1.0.0",
+    "manifestVersion": 2,
+    "requirements": {
+        "apps": [
+            {
+                "name": "Express",
+                "apiVersion": 1
+            }
+        ]
+    },
+    "entryPoints": [
+        {
+            "type": "panel",
+            "id": "panel1",
+            "main": "index.html"
+        }
+    ]
+}

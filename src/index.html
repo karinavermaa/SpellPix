@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="description" content="Get started with Add-on development using JavaScript" />
+        <meta name="keywords" content="Adobe, Express, Add-On, JavaScript" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Get Started</title>
+        <link rel="icon" type="image/png" href="icons/icon48.png"/>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <style>
+
+            .container {
+                margin: 24px;
+                display: flex;
+                flex-direction: column;
+            }
+
+            button {
+                background-color: rgb(64, 70, 202);
+                border-color: rgb(64, 70, 202);
+                border-radius: 16px;
+                border-style: solid;
+                color: rgb(255, 255, 255);
+                font-family: sans-serif;
+                height: 32px;
+                width: 150px;
+                margin-left: auto; /* Centers the text block horizontally */
+                margin-right: auto;
+                margin-bottom: 10px;
+            }
+
+            button:disabled {
+                background-color: rgb(177, 177, 177);
+                border-color: rgb(177, 177, 177);
+            }
+
+            button:not([disabled]):hover {
+                background-color: rgb(56, 62, 181);
+                color: rgb(230, 230, 230);
+                cursor: pointer;
+            }
+
+            /* This style will hide the file input from view */
+            #imageInput {
+                display: none;
+            }
+
+            #clickMe {
+                font-family: 'Roboto', sans-serif;
+            }
+
+            h1 {
+                text-align: center;
+                font-size: 25px;
+                font-family: 'Roboto', sans-serif; /* Example of setting the font */
+                max-width: 70%; /* Makes the text narrower */
+                margin-left: auto; /* Centers the text block horizontally */
+                margin-right: auto;
+            }
+
+            .subtitle {
+                text-align: center;
+                font-family: 'Roboto', sans-serif; /* Apply the Roboto font */
+                font-size: smaller;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                max-width: 70%; /* Makes the text narrower */
+                margin-left: auto; /* Centers the text block horizontally */
+                margin-right: auto;
+            }
+
+            .footer-text {
+                text-align: center;
+                margin-top: 60px;
+                font-family: 'Roboto', sans-serif;
+                font-size: 10px;
+            }
+
+            .scroll-box {
+                max-width: 80%; /* or any width you prefer */
+                margin-left: auto; /* Centers the text block horizontally */
+                margin-right: auto;
+                height: 150px; /* or any height you prefer */
+                overflow-y: scroll; /* enable vertical scrolling */
+                margin-top: 35x; /* space above the box */
+                padding: 14px; /* some padding inside the box */
+                font-family: 'Roboto', sans-serif; /* consistent font */
+                font-size: 14px; 
+                line-height: 1.5; /* adjusts the line spacing of the text */
+                border-radius: 10px; /* rounds the corners */
+                background-color: #f5f5f5;
+                margin-bottom: 20px; 
+                
+            }
+            #box1 {
+                border: 1px solid #ff6865; /* Unique color for box1 */
+            }
+
+            #box2 {
+                border: 1px solid #1fd655; /* Unique color for box2 */
+            }
+
+
+        </style>
+        
+    </head>
+    <body>   
+        <h1></h1>
+        <img src="icons/spellpix_logo.png" alt="SpellPix Logo" style="display: block; margin-left: auto; margin-right: auto; width: 15%;"> <!-- Adjust the width as needed -->
+        
+        <h1 style="text-align: center;">Your Photos to Corrected Text</h1>
+        <p class="subtitle">Verify the quality of the text in your images. Upload to get started.</p>
+        <input type="file" id="imageInput" accept="image/*">
+        <!-- 
+            Please note that this document does not use the spectrum web components theme for Express.
+            You may use "addOnUISdk.app.ui.theme" to get the current theme and style accordingly.
+        --> 
+        <div class="container">
+            <button id="clickMe" disabled>Choose Image</button>
+        </div>
+
+        <div class="scroll-box" id="box1"></div>
+
+        <div class="scroll-box" id="box2"></div>
+    
+        <footer class="footer-text">
+            <p>© 2024 SpellPix - KARD @ QHacks.</p>
+        </footer>        
+        
+        <script type="module" src="index.js"></script>
+
+        <script type="module" src="computerVisionSpellCheck.js"></script>
+
+    </body>
+
+
+
+</html>
